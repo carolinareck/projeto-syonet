@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.css";
 
-const Login: FunctionComponent = () => {
+const Cadastro: FunctionComponent = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -19,25 +19,10 @@ const Login: FunctionComponent = () => {
     }
   };
 
-  const validadePassword = () => {
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])(?:([0-9a-zA-Z$*&@#])(?!\1)){8,}$/i;
-    return passwordRegex.test(password);
-  };
-
-  const handlePasswordSubmit = () => {
-    const isPasswordValide = validadePassword();
-    if (isPasswordValide) {
-      alert("Senha correta.");
-    } else {
-      alert("Senha Incorreta!");
-    }
-  };
   return (
     <>
       <div className="container">
         <div className="inputsWrapper">
-          <h1>Login</h1>
           <label htmlFor="email">E-mail</label>
           <input
             title="email"
@@ -60,4 +45,4 @@ const Login: FunctionComponent = () => {
   );
 };
 
-export default Login;
+export default Cadastro;
